@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #0b1e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .spinner-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .spinning-atom {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            animation: spin 3s linear infinite;
+        }
+
+        .nucleus {
+            width: 20px;
+            height: 20px;
+            background: #ff5733;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .electron {
+            width: 8px;
+            height: 8px;
+            background: #00a5ff;
+            border-radius: 50%;
+            position: absolute;
+            animation: orbit 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(0.8);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(20px);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner-container">
+        <div class="spinning-atom">
+            <div class="nucleus">
+                <div class="electron"></div>
+                <div class="electron"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
